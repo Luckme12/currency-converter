@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Currency Converter - PHP / USD / EUR</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Currency Converter</h1>
+
+    <form id="converter" autocomplete="off" onsubmit="return false;">
+      <div class="row">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" min="0" step="any" value="100" />
+      </div>
+
+      <div class="row">
+        <label for="from">From</label>
+        <select id="from">
+          <option value="PHP">PHP (Philippine Peso)</option>
+          <option value="USD">USD (US Dollar)</option>
+          <option value="EUR">EUR (Euro)</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="to">To</label>
+        <select id="to">
+          <option value="USD">USD (US Dollar)</option>
+          <option value="EUR">EUR (Euro)</option>
+          <option value="PHP">PHP (Philippine Peso)</option>
+        </select>
+      </div>
+
+      <div class="controls">
+        <button id="convertBtn" class="btn">Convert</button>
+        <button id="swapBtn" class="btn alt">Swap</button>
+      </div>
+
+      <div id="status" class="status"></div>
+
+      <div class="result" id="result">
+        <div class="value" id="convertedValue">—</div>
+        <div class="meta" id="rateInfo">Rate: —</div>
+      </div>
+    </form>
+
+    <footer class="foot">
+      <small>Live rates via exchangerate.host (fallback to static rates if offline).</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

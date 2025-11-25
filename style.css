@@ -1,0 +1,64 @@
+:root{
+  --bg:#0f1720;
+  --panel:#0b1220;
+  --card:#0f1a2b;
+  --muted:#9aa8b2;
+  --accent:#00eaff;
+  --btn:#0ea5a9;
+  --danger:#ff6b6b;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial;background:linear-gradient(180deg,#031018 0%, #071421 100%);color:#e6f1f5}
+
+.app{
+  width:min(800px,94vw);
+  margin:4vh auto;
+  padding:24px;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+h1{margin:0 0 18px;font-weight:600;font-size:1.4rem;color:var(--accent)}
+
+form{display:grid;gap:12px}
+.row{display:flex;flex-direction:column;gap:6px}
+.row label{font-size:0.85rem;color:var(--muted)}
+.row input[type="number"], .row select{
+  padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+  background:var(--card);color:inherit;font-size:1rem;outline:none
+}
+.row input[type="number"]::placeholder{color:rgba(255,255,255,0.35)}
+
+.controls{display:flex;gap:10px;margin-top:6px}
+.btn{
+  padding:10px 14px;border-radius:10px;border:none;background:var(--btn);color:#002a2b;font-weight:600;cursor:pointer;
+  box-shadow: 0 6px 18px rgba(14,165,169,0.12);
+}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid rgba(0,234,255,0.12)}
+.btn:active{transform:translateY(1px)}
+
+.status{margin-top:8px;color:var(--muted);font-size:0.9rem;min-height:18px}
+
+.result{
+  margin-top:14px;padding:14px;border-radius:10px;background:var(--glass);display:flex;flex-direction:column;gap:6px;border:1px solid rgba(255,255,255,0.02)
+}
+.value{font-size:1.6rem;color:var(--accent);font-weight:700}
+.meta{font-size:0.95rem;color:var(--muted)}
+
+.foot{margin-top:16px;text-align:center;color:var(--muted);font-size:0.85rem}
+
+/* responsive */
+@media (min-width:720px){
+  form{grid-template-columns: 1fr 1fr;align-items:end}
+  .controls{grid-column:1/-1}
+  .row:nth-child(1){grid-column:1/-1}
+  .result{grid-column:1/-1}
+}
+@media (max-width:420px){
+  .value{font-size:1.25rem}
+  .btn{padding:9px 12px;font-size:0.95rem}
+}
